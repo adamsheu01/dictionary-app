@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADAM Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="head">
+
+    <button class="check">
+      📖
+    </button>
+   <div class="f1">
+     
+   <form>
+    
+    <a href="#" onclick="showPage('About')">About</a>
+    <a href="#" onclick="showPage('Login')">Login</a>
+    <a href="#" onclick="showPage('SignUp')">Sign Up</a>
+    <button id="logoutBtn" onclick="logoutUser()">
+    Logout
+    </button>
+    </form>
+    </div>
+ </nav>
+
+
+
+ <section id="Home" class="page">
+    <h2>Welcome to ADAM Library</h2>
+    <p>
+      Learn HTML, CSS, JavaScript and Tailwind CSS for free.
+      Sign up and Login to Start Learning.
+    </p>
+</section>
+
+<section id="About" class="page" style="display:none;">
+    <h2>About Us</h2>
+    <p>
+        ADAM Library is a frontend learning platform designed
+        to help beginners learn web development step by step.
+    </p>
+</section>
+
+<section id="Login" class="page" style="display:none;">
+    <h2>Login</h2>
+
+    <input type="email" id="loginEmail" placeholder="Email">
+    <br><br>
+
+    <div class="password-box">
+    <input type="password" id="loginPassword" placeholder="Password">
+    </div>
+    <br><br>
+
+    <button onclick="loginUser()">Login</button>
+
+    <p id="loginMsg"></p>
+</section>
+
+<section id="SignUp" class="page" style="display:none;">
+    <h2>Create Account</h2>
+
+    <input type="text" id="signupName" placeholder="Full Name">
+    <br><br>
+
+    <input type="email" id="signupEmail" placeholder="Email">
+    <br><br>
+
+    <input type="password" id="signupPassword" placeholder="Password">
+    <br><br>
+
+    <button onclick="signupUser()">Sign Up</button>
+
+    <p id="signupMsg"></p>
+</section>
+
+ <div id="librarySection" style="display:none;">
+
+<header>
+    <h1>ADAM Library</h1>
+    <p>Learn HTML, CSS, JavaScript & Tailwind CSS</p>
+</header>
+
+<main class="library">
+
+    <div class="book-card">
+        <h2>HTML Handbook</h2>
+        <p>Learn the structure of web pages using HTML.</p>
+        <button onclick="showBook('html')">Read Book</button>
+    </div>
+
+    <div class="book-card">
+        <h2>CSS Mastery</h2>
+        <p>Style beautiful websites with CSS.</p>
+        <button onclick="showBook('css')">Read Book</button>
+    </div>
+
+    <div class="book-card">
+        <h2>JavaScript Guide</h2>
+        <p>Make websites interactive with JavaScript.</p>
+        <button onclick="showBook('js')">Read Book</button>
+    </div>
+
+    <div class="book-card">
+        <h2>Tailwind CSS</h2>
+        <p>Build modern UIs with Tailwind CSS.</p>
+        <button onclick="showBook('tailwind')">Read Book</button>
+    </div>
+
+</main>
+
+<section id="reader">
+    <h2>Book Content</h2>
+    <div id="content">
+        Select a book to start reading.
+    </div>
+</section>
+
+</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+<script>
+  const books = {
+  html: `
+    <h2>📖 HTML Complete Guide</h2>
+
+    <h3>Chapter 1: Introduction to HTML</h3>
+    <p>
+      HTML stands for HyperText Markup Language.
+      It is the standard language used to create web pages.
+    </p>
+
+    <h3>Chapter 2: HTML Document Structure</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Content Here
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h3>Chapter 3: Headings</h3>
+    <pre>
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+    </pre>
+
+    <h3>Chapter 4: Paragraphs</h3>
+    <pre>
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+    </pre>
+
+    <h3>Chapter 5: Links</h3>
+    <pre>
+&lt;a href="https://google.com"&gt;Visit Google&lt;/a&gt;
+    </pre>
+
+    <h3>Chapter 6: Images</h3>
+    <pre>
+&lt;img src="image.jpg" alt="Image"&gt;
+    </pre>
+
+    <h3>Chapter 7: Lists</h3>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+
+    <h3>Chapter 8: Forms</h3>
+    <pre>
+&lt;form&gt;
+  &lt;input type="text"&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h3>Chapter 9: Semantic Tags</h3>
+    <p>
+      Semantic tags include header, nav, section,
+      article, aside and footer.
+    </p>
+
+    <h3>Chapter 10: HTML Best Practices</h3>
+    <p>
+      Use proper indentation, semantic tags,
+      alt text for images and meaningful headings.
+    </p>
+  `,
+
+  css: `
+    <h2>🎨 CSS Complete Guide</h2>
+
+    <h3>Chapter 1: Introduction</h3>
+    <p>CSS styles your website.</p>
+
+    <h3>Chapter 2: Selectors</h3>
+    <pre>
+p{
+ color:red;
+}
+    </pre>
+
+    <h3>Chapter 3: Colors</h3>
+    <pre>
+color:red;
+color:#ff0000;
+    </pre>
+
+    <h3>Chapter 4: Box Model</h3>
+    <p>Margin, Border, Padding and Content.</p>
+
+    <h3>Chapter 5: Flexbox</h3>
+    <pre>
+display:flex;
+justify-content:center;
+align-items:center;
+    </pre>
+
+    <h3>Chapter 6: Grid</h3>
+    <pre>
+display:grid;
+grid-template-columns:1fr 1fr;
+    </pre>
+
+    <h3>Chapter 7: Position</h3>
+    <p>Static, Relative, Absolute, Fixed, Sticky.</p>
+
+    <h3>Chapter 8: Animation</h3>
+    <pre>
+@keyframes move{
+ from{left:0}
+ to{left:200px}
+}
+    </pre>
+
+    <h3>Chapter 9: Responsive Design</h3>
+    <pre>
+@media(max-width:768px){
+}
+    </pre>
+
+    <h3>Chapter 10: Modern Layouts</h3>
+    <p>Combine Flexbox and Grid.</p>
+  `,
+
+  js: `
+<h2>⚡ JavaScript Complete Guide</h2>
+
+<h3>Chapter 1: Introduction</h3>
+<p>
+JavaScript makes websites interactive.
+It can change HTML, CSS and respond to user actions.
+</p>
+
+<h3>Chapter 2: Variables</h3>
+<pre>
+let name = "Adam";
+const age = 20;
+</pre>
+
+<h3>Chapter 3: Data Types</h3>
+<pre>
+String
+Number
+Boolean
+Array
+Object
+</pre>
+
+<h3>Chapter 4: Functions</h3>
+<pre>
+function greet(){
+  console.log("Hello");
+}
+</pre>
+
+<h3>Chapter 5: Conditions</h3>
+<pre>
+if(age >= 18){
+  console.log("Adult");
+}
+</pre>
+
+<h3>Chapter 6: Loops</h3>
+<pre>
+for(let i = 0; i < 5; i++){
+  console.log(i);
+}
+</pre>
+
+<h3>Chapter 7: Arrays</h3>
+<pre>
+const colors = ["red","blue","green"];
+</pre>
+
+<h3>Chapter 8: Objects</h3>
+<pre>
+const user = {
+  name:"Adam",
+  age:20
+};
+</pre>
+
+<h3>Chapter 9: DOM Manipulation</h3>
+<pre>
+document.querySelector("h1").textContent =
+"Welcome";
+</pre>
+
+<h3>Chapter 10: Events</h3>
+<pre>
+button.addEventListener("click", () => {
+  alert("Button Clicked");
+});
+</pre>
+`,
+
+  
+
+  tailwind: `
+    <h2>🚀 Tailwind CSS Complete Guide</h2>
+
+    <h3>Chapter 1: Installation</h3>
+    <p>Install Tailwind with npm or CDN.</p>
+
+    <h3>Chapter 2: Colors</h3>
+    <pre>
+bg-blue-500
+text-white
+    </pre>
+
+    <h3>Chapter 3: Padding & Margin</h3>
+    <pre>
+p-4
+m-4
+    </pre>
+
+    <h3>Chapter 4: Flexbox</h3>
+    <pre>
+flex
+justify-center
+items-center
+    </pre>
+
+    <h3>Chapter 5: Grid</h3>
+    <pre>
+grid
+grid-cols-3
+    </pre>
+
+    <h3>Chapter 6: Width & Height</h3>
+    <pre>
+w-full
+h-screen
+    </pre>
+
+    <h3>Chapter 7: Responsive Design</h3>
+    <pre>
+md:flex
+lg:grid
+    </pre>
+
+    <h3>Chapter 8: Hover Effects</h3>
+    <pre>
+hover:bg-blue-700
+    </pre>
+
+    <h3>Chapter 9: Cards</h3>
+    <p>Create beautiful card layouts.</p>
+
+    <h3>Chapter 10: Projects</h3>
+    <p>Build landing pages, dashboards and portfolios.</p>
+  `
+};
+
+function showBook(book){
+  document.getElementById("content").innerHTML = books[book];
+}
+function showPage(pageId){
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(page=>{
+        page.style.display = "none";
+    });
+
+    document.getElementById(pageId).style.display = "block";
+}
+
+
+function signupUser(){
+
+    const name = document.getElementById("signupName").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+
+    if(!name || !email || !password){
+        document.getElementById("signupMsg").textContent =
+        "Please fill all fields";
+        return;
+    }
+
+
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    document.getElementById("signupMsg").textContent =
+    "Account created successfully!";
+}
+
+
+function loginUser(){
+
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    const savedEmail = localStorage.getItem("email");
+    const savedPassword = localStorage.getItem("password");
+
+    if(email === savedEmail && password === savedPassword){
+
+        document.querySelectorAll(".page").forEach(page=>{
+            page.style.display = "none";
+        });
+
+        document.getElementById("librarySection").style.display = "block";
+
+    }else{
+        document.getElementById("loginMsg").textContent =
+        "Invalid Email or Password";
+    }
+}
+
+function logoutUser(){
+
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+
+    document.getElementById("librarySection").style.display = "none";
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.style.display = "none";
+    });
+
+    document.getElementById("Login").style.display = "block";
+
+    alert("Logged out successfully!");
+}
+function showPage(pageId){
+
+    const pages = document.querySelectorAll(".page");
+    const library = document.getElementById("librarySection");
+
+    pages.forEach(page=>{
+        page.style.display = "none";
+    });
+
+    library.style.display = "none";
+
+    document.getElementById(pageId).style.display = "block";
+}
+function showLibrary(){
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(page=>{
+        page.style.display = "none";
+    });
+
+    document.getElementById("librarySection").style.display = "block";
+}
+
+function logoutUser(){
+
+    document.getElementById("librarySection").style.display = "none";
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.style.display = "none";
+    });
+
+    document.getElementById("Login").style.display = "block";
+
+    document.getElementById("loginEmail").value = "";
+    document.getElementById("loginPassword").value = "";
+
+    alert("Logged out successfully!");
+}
+</script>
+</html>
