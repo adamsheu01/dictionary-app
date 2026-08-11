@@ -2,503 +2,1507 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="ADAM Library - A modern platform for learning HTML, CSS, JavaScript and Tailwind CSS."
+  >
+  <link rel="stylesheet" href="style.css">
+
   <title>ADAM Library</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <nav class="head">
+  <!-- ==========================================
+       BACKGROUND DECORATIONS
+  =========================================== -->
 
-    <button class="check">
-      📖
-    </button>
-   <div class="f1">
-     
-   <form>
-    
-    <a href="#" onclick="showPage('About')">About</a>
-    <a href="#" onclick="showPage('Login')">Login</a>
-    <a href="#" onclick="showPage('SignUp')">Sign Up</a>
-    <button id="logoutBtn" onclick="logoutUser()">
-    Logout
-    </button>
-    </form>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+
+  <!-- ==========================================
+       NAVIGATION
+  =========================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <!-- Logo -->
+
+      <button
+        class="brand"
+        type="button"
+        onclick="showPage('Home')"
+      >
+
+        <span class="brand-icon">
+          A
+        </span>
+
+        <span>
+          ADAM<span class="brand-highlight">Library</span>
+        </span>
+
+      </button>
+
+
+      <!-- Desktop Navigation -->
+
+      <nav
+        class="nav-links"
+        id="menu"
+      >
+
+        <button
+          type="button"
+          class="nav-link active"
+          data-page="Home"
+          onclick="showPage('Home')"
+        >
+          Home
+        </button>
+
+        <button
+          type="button"
+          class="nav-link"
+          data-page="About"
+          onclick="showPage('About')"
+        >
+          About
+        </button>
+
+        <button
+          type="button"
+          class="nav-link"
+          data-page="Login"
+          onclick="showPage('Login')"
+        >
+          Login
+        </button>
+
+        <button
+          type="button"
+          class="nav-signup"
+          data-page="SignUp"
+          onclick="showPage('SignUp')"
+        >
+          Get Started
+        </button>
+
+        <button
+          type="button"
+          id="logoutBtn"
+          class="nav-logout"
+          onclick="logoutUser()"
+        >
+          Logout
+        </button>
+
+      </nav>
+
+
+      <!-- Mobile Menu -->
+
+      <button
+        class="mobile-menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
- </nav>
+
+  </header>
 
 
 
- <section id="Home" class="page">
-    <h2>Welcome to ADAM Library</h2>
-    <p>
-      Learn HTML, CSS, JavaScript and Tailwind CSS for free.
-      Sign up and Login to Start Learning.
-    </p>
-</section>
+  <!-- ==========================================
+       HOME PAGE
+  =========================================== -->
 
-<section id="About" class="page" style="display:none;">
-    <h2>About Us</h2>
-    <p>
-        ADAM Library is a frontend learning platform designed
-        to help beginners learn web development step by step.
-    </p>
-</section>
+  <section
+    id="Home"
+    class="page home-page"
+  >
 
-<section id="Login" class="page" style="display:none;">
-    <h2>Login</h2>
+    <div class="hero-container">
 
-    <input type="email" id="loginEmail" placeholder="Email">
-    <br><br>
+      <!-- Hero Text -->
 
-    <div class="password-box">
-    <input type="password" id="loginPassword" placeholder="Password">
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+
+          Learn. Build. Grow.
+        </div>
+
+
+        <h1>
+          Your journey to
+          <span class="gradient-text">
+            becoming a developer
+          </span>
+          starts here.
+        </h1>
+
+
+        <p class="hero-description">
+
+          Master the fundamentals of modern web development
+          with simple lessons, practical examples and
+          beginner-friendly resources.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <button
+            type="button"
+            class="primary-btn"
+            onclick="showPage('SignUp')"
+          >
+
+            Start Learning
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+
+          <button
+            type="button"
+            class="secondary-btn"
+            onclick="showPage('About')"
+          >
+
+            Explore Library
+
+          </button>
+
+        </div>
+
+
+        <!-- Stats -->
+
+        <div class="hero-stats">
+
+          <div class="stat">
+
+            <strong>
+              4+
+            </strong>
+
+            <span>
+              Courses
+            </span>
+
+          </div>
+
+
+          <div class="stat-divider"></div>
+
+
+          <div class="stat">
+
+            <strong>
+              100%
+            </strong>
+
+            <span>
+              Beginner Friendly
+            </span>
+
+          </div>
+
+
+          <div class="stat-divider"></div>
+
+
+          <div class="stat">
+
+            <strong>
+              Free
+            </strong>
+
+            <span>
+              To Learn
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Hero Visual -->
+
+      <div class="hero-visual">
+
+        <div class="code-window">
+
+          <div class="window-top">
+
+            <div class="window-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+            <span class="window-title">
+              learning.html
+            </span>
+
+          </div>
+
+
+          <div class="code-content">
+
+            <div>
+              <span class="code-number">01</span>
+              <span class="purple">&lt;section</span>
+              <span class="blue">class</span>
+              <span class="green">="hero"</span>
+              <span class="purple">&gt;</span>
+            </div>
+
+
+            <div class="code-indent">
+              <span class="code-number">02</span>
+              <span class="purple">&lt;h1&gt;</span>
+            </div>
+
+
+            <div class="code-indent-2">
+              <span class="code-number">03</span>
+              <span class="white">
+                Build Your Future
+              </span>
+            </div>
+
+
+            <div class="code-indent">
+              <span class="code-number">04</span>
+              <span class="purple">&lt;/h1&gt;</span>
+            </div>
+
+
+            <div class="code-indent">
+              <span class="code-number">05</span>
+              <span class="purple">&lt;p&gt;</span>
+            </div>
+
+
+            <div class="code-indent-2">
+              <span class="code-number">06</span>
+              <span class="orange">
+                Learn. Build. Create.
+              </span>
+            </div>
+
+
+            <div class="code-indent">
+              <span class="code-number">07</span>
+              <span class="purple">&lt;/p&gt;</span>
+            </div>
+
+
+            <div>
+              <span class="code-number">08</span>
+              <span class="purple">&lt;/section&gt;</span>
+            </div>
+
+
+            <div class="cursor-line">
+              <span class="cursor"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Floating Cards -->
+
+        <div class="floating-card card-html">
+
+          <div class="floating-icon html-icon">
+            &lt;/&gt;
+          </div>
+
+          <div>
+            <strong>HTML</strong>
+            <span>Structure</span>
+          </div>
+
+        </div>
+
+
+        <div class="floating-card card-js">
+
+          <div class="floating-icon js-icon">
+            JS
+          </div>
+
+          <div>
+            <strong>JavaScript</strong>
+            <span>Interaction</span>
+          </div>
+
+        </div>
+
+
+        <div class="floating-card card-css">
+
+          <div class="floating-icon css-icon">
+            #
+          </div>
+
+          <div>
+            <strong>CSS</strong>
+            <span>Design</span>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-    <br><br>
 
-    <button onclick="loginUser()">Login</button>
 
-    <p id="loginMsg"></p>
-</section>
 
-<section id="SignUp" class="page" style="display:none;">
-    <h2>Create Account</h2>
+    <!-- Learning Paths -->
 
-    <input type="text" id="signupName" placeholder="Full Name">
-    <br><br>
+    <div class="learning-section">
 
-    <input type="email" id="signupEmail" placeholder="Email">
-    <br><br>
+      <div class="section-heading">
 
-    <input type="password" id="signupPassword" placeholder="Password">
-    <br><br>
+        <div>
 
-    <button onclick="signupUser()">Sign Up</button>
+          <span class="section-eyebrow">
+            LEARNING PATH
+          </span>
 
-    <p id="signupMsg"></p>
-</section>
+          <h2>
+            Everything you need to start coding
+          </h2>
 
- <div id="librarySection" style="display:none;">
+        </div>
 
-<header>
-    <h1>ADAM Library</h1>
-    <p>Learn HTML, CSS, JavaScript & Tailwind CSS</p>
-</header>
+        <p>
+          Build a strong foundation with our carefully
+          organized learning resources.
+        </p>
 
-<main class="library">
+      </div>
 
-    <div class="book-card">
-        <h2>HTML Handbook</h2>
-        <p>Learn the structure of web pages using HTML.</p>
-        <button onclick="showBook('html')">Read Book</button>
+
+      <div class="feature-grid">
+
+        <!-- HTML -->
+
+        <article class="feature-card">
+
+          <div class="feature-top">
+
+            <div class="course-icon html-course">
+              &lt;/&gt;
+            </div>
+
+            <span class="course-number">
+              01
+            </span>
+
+          </div>
+
+          <h3>
+            HTML
+          </h3>
+
+          <p>
+            Learn how websites are structured and
+            understand the building blocks of every webpage.
+          </p>
+
+          <button
+            type="button"
+            onclick="showPage('SignUp')"
+          >
+            Start learning
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+        <!-- CSS -->
+
+        <article class="feature-card">
+
+          <div class="feature-top">
+
+            <div class="course-icon css-course">
+              #
+            </div>
+
+            <span class="course-number">
+              02
+            </span>
+
+          </div>
+
+          <h3>
+            CSS
+          </h3>
+
+          <p>
+            Transform simple HTML into beautiful,
+            responsive and modern interfaces.
+          </p>
+
+          <button
+            type="button"
+            onclick="showPage('SignUp')"
+          >
+            Start learning
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+        <!-- JavaScript -->
+
+        <article class="feature-card">
+
+          <div class="feature-top">
+
+            <div class="course-icon js-course">
+              JS
+            </div>
+
+            <span class="course-number">
+              03
+            </span>
+
+          </div>
+
+          <h3>
+            JavaScript
+          </h3>
+
+          <p>
+            Add logic, interactions and dynamic behavior
+            to your websites with JavaScript.
+          </p>
+
+          <button
+            type="button"
+            onclick="showPage('SignUp')"
+          >
+            Start learning
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+        <!-- Tailwind -->
+
+        <article class="feature-card">
+
+          <div class="feature-top">
+
+            <div class="course-icon tailwind-course">
+              ✦
+            </div>
+
+            <span class="course-number">
+              04
+            </span>
+
+          </div>
+
+          <h3>
+            Tailwind CSS
+          </h3>
+
+          <p>
+            Build polished user interfaces quickly using
+            utility-first CSS classes.
+          </p>
+
+          <button
+            type="button"
+            onclick="showPage('SignUp')"
+          >
+            Start learning
+            <span>→</span>
+          </button>
+
+        </article>
+
+      </div>
+
     </div>
 
-    <div class="book-card">
-        <h2>CSS Mastery</h2>
-        <p>Style beautiful websites with CSS.</p>
-        <button onclick="showBook('css')">Read Book</button>
-    </div>
-
-    <div class="book-card">
-        <h2>JavaScript Guide</h2>
-        <p>Make websites interactive with JavaScript.</p>
-        <button onclick="showBook('js')">Read Book</button>
-    </div>
-
-    <div class="book-card">
-        <h2>Tailwind CSS</h2>
-        <p>Build modern UIs with Tailwind CSS.</p>
-        <button onclick="showBook('tailwind')">Read Book</button>
-    </div>
-
-</main>
-
-<section id="reader">
-    <h2>Book Content</h2>
-    <div id="content">
-        Select a book to start reading.
-    </div>
-</section>
-
-</div>
   </section>
 
+
+
+  <!-- ==========================================
+       ABOUT PAGE
+  =========================================== -->
+
+  <section
+    id="About"
+    class="page inner-page"
+    style="display: none;"
+  >
+
+    <div class="inner-container">
+
+      <div class="page-heading">
+
+        <span class="section-eyebrow">
+          ABOUT ADAM LIBRARY
+        </span>
+
+        <h1>
+          Learn the skills.
+          <span class="gradient-text">
+            Build the future.
+          </span>
+        </h1>
+
+        <p>
+          ADAM Library is designed to make learning
+          frontend development simple, practical and
+          enjoyable for beginners.
+        </p>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <div class="about-icon">
+            🎯
+          </div>
+
+          <h3>
+            Our Mission
+          </h3>
+
+          <p>
+            Help beginners understand the fundamentals
+            of frontend development without unnecessary
+            complexity.
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <div class="about-icon">
+            💡
+          </div>
+
+          <h3>
+            Practical Learning
+          </h3>
+
+          <p>
+            Learn through examples and concepts that
+            you can immediately apply to real projects.
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <div class="about-icon">
+            🚀
+          </div>
+
+          <h3>
+            Grow Your Skills
+          </h3>
+
+          <p>
+            Build a strong foundation that prepares you
+            for more advanced frontend development.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="about-banner">
+
+        <div>
+
+          <span class="section-eyebrow">
+            READY TO START?
+          </span>
+
+          <h2>
+            Your first line of code
+            is waiting.
+          </h2>
+
+        </div>
+
+        <button
+          type="button"
+          class="primary-btn"
+          onclick="showPage('SignUp')"
+        >
+          Create Free Account →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==========================================
+       LOGIN PAGE
+  =========================================== -->
+
+  <section
+    id="Login"
+    class="page auth-page"
+    style="display: none;"
+  >
+
+    <div class="auth-wrapper">
+
+      <div class="auth-intro">
+
+        <span class="section-eyebrow">
+          WELCOME BACK
+        </span>
+
+        <h1>
+          Continue your
+          <span class="gradient-text">
+            learning journey.
+          </span>
+        </h1>
+
+        <p>
+          Login to access your courses and continue
+          learning HTML, CSS, JavaScript and Tailwind CSS.
+        </p>
+
+
+        <div class="auth-benefits">
+
+          <div>
+            <span>✓</span>
+            Access all learning resources
+          </div>
+
+          <div>
+            <span>✓</span>
+            Continue where you stopped
+          </div>
+
+          <div>
+            <span>✓</span>
+            Learn at your own pace
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="auth-card">
+
+        <div class="auth-card-header">
+
+          <div class="auth-logo">
+            A
+          </div>
+
+          <h2>
+            Welcome back
+          </h2>
+
+          <p>
+            Login to your ADAM Library account.
+          </p>
+
+        </div>
+
+
+        <form
+          id="loginForm"
+          onsubmit="loginUser(event)"
+        >
+
+          <div class="form-group">
+
+            <label for="loginEmail">
+              Email address
+            </label>
+
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="loginPassword">
+              Password
+            </label>
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="auth-submit"
+          >
+            Login to Library
+            <span>→</span>
+          </button>
+
+        </form>
+
+
+        <p
+          id="loginMsg"
+          class="message"
+          role="alert"
+        ></p>
+
+
+        <div class="auth-switch">
+
+          Don't have an account?
+
+          <button
+            type="button"
+            onclick="showPage('SignUp')"
+          >
+            Create one
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==========================================
+       SIGN UP PAGE
+  =========================================== -->
+
+  <section
+    id="SignUp"
+    class="page auth-page"
+    style="display: none;"
+  >
+
+    <div class="auth-wrapper">
+
+      <div class="auth-intro">
+
+        <span class="section-eyebrow">
+          START TODAY
+        </span>
+
+        <h1>
+          Create your
+          <span class="gradient-text">
+            learning account.
+          </span>
+        </h1>
+
+        <p>
+          Join ADAM Library and get access to
+          beginner-friendly frontend development resources.
+        </p>
+
+
+        <div class="mini-course-list">
+
+          <div class="mini-course">
+
+            <span class="mini-icon html-course">
+              &lt;/&gt;
+            </span>
+
+            <div>
+              <strong>HTML</strong>
+              <span>Build structure</span>
+            </div>
+
+          </div>
+
+
+          <div class="mini-course">
+
+            <span class="mini-icon css-course">
+              #
+            </span>
+
+            <div>
+              <strong>CSS</strong>
+              <span>Design interfaces</span>
+            </div>
+
+          </div>
+
+
+          <div class="mini-course">
+
+            <span class="mini-icon js-course">
+              JS
+            </span>
+
+            <div>
+              <strong>JavaScript</strong>
+              <span>Add interaction</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="auth-card">
+
+        <div class="auth-card-header">
+
+          <div class="auth-logo">
+            A
+          </div>
+
+          <h2>
+            Create account
+          </h2>
+
+          <p>
+            Start your learning journey today.
+          </p>
+
+        </div>
+
+
+        <form
+          id="signupForm"
+          onsubmit="signupUser(event)"
+        >
+
+          <div class="form-group">
+
+            <label for="signupName">
+              Full name
+            </label>
+
+            <input
+              type="text"
+              id="signupName"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="signupEmail">
+              Email address
+            </label>
+
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="signupPassword">
+              Password
+            </label>
+
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="At least 6 characters"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            >
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="auth-submit"
+          >
+            Create Account
+            <span>→</span>
+          </button>
+
+        </form>
+
+
+        <p
+          id="signupMsg"
+          class="message"
+          role="alert"
+        ></p>
+
+
+        <div class="auth-switch">
+
+          Already have an account?
+
+          <button
+            type="button"
+            onclick="showPage('Login')"
+          >
+            Login instead
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==========================================
+       LIBRARY DASHBOARD
+  =========================================== -->
+
+  <section
+    id="librarySection"
+    class="library-page"
+    style="display: none;"
+  >
+
+    <div class="library-container">
+
+      <!-- Library Header -->
+
+      <div class="library-welcome">
+
+        <div>
+
+          <span class="section-eyebrow">
+            YOUR LIBRARY
+          </span>
+
+          <h1>
+            Keep learning,
+            <span id="welcomeUser">
+              Developer
+            </span>.
+          </h1>
+
+          <p>
+            Choose a course and continue building
+            your frontend development skills.
+          </p>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="library-logout"
+          onclick="logoutUser()"
+        >
+          Logout
+        </button>
+
+      </div>
+
+
+      <!-- Progress -->
+
+      <div class="progress-card">
+
+        <div class="progress-info">
+
+          <div>
+
+            <span>
+              YOUR LEARNING PATH
+            </span>
+
+            <strong>
+              Frontend Fundamentals
+            </strong>
+
+          </div>
+
+          <strong>
+            4 Courses
+          </strong>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+          <span></span>
+
+        </div>
+
+      </div>
+
+
+      <!-- Course Cards -->
+
+      <div class="library-grid">
+
+
+        <!-- HTML -->
+
+        <article class="library-card">
+
+          <div class="library-card-top">
+
+            <div class="large-course-icon html-course">
+              &lt;/&gt;
+            </div>
+
+            <span class="course-tag">
+              BEGINNER
+            </span>
+
+          </div>
+
+
+          <h2>
+            HTML Handbook
+          </h2>
+
+          <p>
+            Learn the structure of webpages,
+            semantic elements, forms, links and more.
+          </p>
+
+
+          <div class="course-meta">
+
+            <span>
+              📚 10 Chapters
+            </span>
+
+            <span>
+              Beginner
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            onclick="showBook('html')"
+            class="read-button"
+          >
+            Read Course
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+
+        <!-- CSS -->
+
+        <article class="library-card">
+
+          <div class="library-card-top">
+
+            <div class="large-course-icon css-course">
+              #
+            </div>
+
+            <span class="course-tag">
+              BEGINNER
+            </span>
+
+          </div>
+
+
+          <h2>
+            CSS Mastery
+          </h2>
+
+          <p>
+            Learn colors, layouts, Flexbox, Grid,
+            animations and responsive design.
+          </p>
+
+
+          <div class="course-meta">
+
+            <span>
+              📚 10 Chapters
+            </span>
+
+            <span>
+              Beginner
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            onclick="showBook('css')"
+            class="read-button"
+          >
+            Read Course
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+
+        <!-- JavaScript -->
+
+        <article class="library-card">
+
+          <div class="library-card-top">
+
+            <div class="large-course-icon js-course">
+              JS
+            </div>
+
+            <span class="course-tag">
+              BEGINNER
+            </span>
+
+          </div>
+
+
+          <h2>
+            JavaScript Guide
+          </h2>
+
+          <p>
+            Learn variables, functions, arrays,
+            objects, DOM manipulation and events.
+          </p>
+
+
+          <div class="course-meta">
+
+            <span>
+              📚 10 Chapters
+            </span>
+
+            <span>
+              Beginner
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            onclick="showBook('js')"
+            class="read-button"
+          >
+            Read Course
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+
+        <!-- Tailwind -->
+
+        <article class="library-card">
+
+          <div class="library-card-top">
+
+            <div class="large-course-icon tailwind-course">
+              ✦
+            </div>
+
+            <span class="course-tag">
+              BEGINNER
+            </span>
+
+          </div>
+
+
+          <h2>
+            Tailwind CSS
+          </h2>
+
+          <p>
+            Build modern interfaces using utility
+            classes and responsive design.
+          </p>
+
+
+          <div class="course-meta">
+
+            <span>
+              📚 10 Chapters
+            </span>
+
+            <span>
+              Beginner
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            onclick="showBook('tailwind')"
+            class="read-button"
+          >
+            Read Course
+            <span>→</span>
+          </button>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- Reader -->
+
+      <section
+        id="reader"
+        class="reader"
+      >
+
+        <div class="reader-header">
+
+          <div>
+
+            <span class="section-eyebrow">
+              COURSE READER
+            </span>
+
+            <h2>
+              Course Content
+            </h2>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="close-reader"
+            onclick="closeBook()"
+          >
+            ✕ Close
+          </button>
+
+        </div>
+
+
+        <div
+          id="content"
+          class="reader-content"
+        >
+
+          <div class="empty-reader">
+
+            <div class="empty-icon">
+              📖
+            </div>
+
+            <h3>
+              Choose a course to begin
+            </h3>
+
+            <p>
+              Select one of the courses above
+              and start learning.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==========================================
+       FOOTER
+  =========================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div>
+
+        <button
+          type="button"
+          class="footer-brand"
+          onclick="showPage('Home')"
+        >
+
+          <span class="brand-icon">
+            A
+          </span>
+
+          ADAM Library
+
+        </button>
+
+        <p>
+          Learn. Build. Grow.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <button
+          type="button"
+          onclick="showPage('Home')"
+        >
+          Home
+        </button>
+
+        <button
+          type="button"
+          onclick="showPage('About')"
+        >
+          About
+        </button>
+
+        <button
+          type="button"
+          onclick="showPage('Login')"
+        >
+          Login
+        </button>
+
+        <button
+          type="button"
+          onclick="showPage('SignUp')"
+        >
+          Sign Up
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 ADAM Library. All rights reserved.
+      </p>
+
+      <span>
+        Built for future developers.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+  =========================================== -->
+
   <script src="script.js"></script>
+
 </body>
-<script>
-  const books = {
-  html: `
-    <h2>📖 HTML Complete Guide</h2>
-
-    <h3>Chapter 1: Introduction to HTML</h3>
-    <p>
-      HTML stands for HyperText Markup Language.
-      It is the standard language used to create web pages.
-    </p>
-
-    <h3>Chapter 2: HTML Document Structure</h3>
-    <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;My Website&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    Content Here
-&lt;/body&gt;
-&lt;/html&gt;
-    </pre>
-
-    <h3>Chapter 3: Headings</h3>
-    <pre>
-&lt;h1&gt;Heading 1&lt;/h1&gt;
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-    </pre>
-
-    <h3>Chapter 4: Paragraphs</h3>
-    <pre>
-&lt;p&gt;This is a paragraph&lt;/p&gt;
-    </pre>
-
-    <h3>Chapter 5: Links</h3>
-    <pre>
-&lt;a href="https://google.com"&gt;Visit Google&lt;/a&gt;
-    </pre>
-
-    <h3>Chapter 6: Images</h3>
-    <pre>
-&lt;img src="image.jpg" alt="Image"&gt;
-    </pre>
-
-    <h3>Chapter 7: Lists</h3>
-    <pre>
-&lt;ul&gt;
-  &lt;li&gt;HTML&lt;/li&gt;
-  &lt;li&gt;CSS&lt;/li&gt;
-&lt;/ul&gt;
-    </pre>
-
-    <h3>Chapter 8: Forms</h3>
-    <pre>
-&lt;form&gt;
-  &lt;input type="text"&gt;
-  &lt;button&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-    </pre>
-
-    <h3>Chapter 9: Semantic Tags</h3>
-    <p>
-      Semantic tags include header, nav, section,
-      article, aside and footer.
-    </p>
-
-    <h3>Chapter 10: HTML Best Practices</h3>
-    <p>
-      Use proper indentation, semantic tags,
-      alt text for images and meaningful headings.
-    </p>
-  `,
-
-  css: `
-    <h2>🎨 CSS Complete Guide</h2>
-
-    <h3>Chapter 1: Introduction</h3>
-    <p>CSS styles your website.</p>
-
-    <h3>Chapter 2: Selectors</h3>
-    <pre>
-p{
- color:red;
-}
-    </pre>
-
-    <h3>Chapter 3: Colors</h3>
-    <pre>
-color:red;
-color:#ff0000;
-    </pre>
-
-    <h3>Chapter 4: Box Model</h3>
-    <p>Margin, Border, Padding and Content.</p>
-
-    <h3>Chapter 5: Flexbox</h3>
-    <pre>
-display:flex;
-justify-content:center;
-align-items:center;
-    </pre>
-
-    <h3>Chapter 6: Grid</h3>
-    <pre>
-display:grid;
-grid-template-columns:1fr 1fr;
-    </pre>
-
-    <h3>Chapter 7: Position</h3>
-    <p>Static, Relative, Absolute, Fixed, Sticky.</p>
-
-    <h3>Chapter 8: Animation</h3>
-    <pre>
-@keyframes move{
- from{left:0}
- to{left:200px}
-}
-    </pre>
-
-    <h3>Chapter 9: Responsive Design</h3>
-    <pre>
-@media(max-width:768px){
-}
-    </pre>
-
-    <h3>Chapter 10: Modern Layouts</h3>
-    <p>Combine Flexbox and Grid.</p>
-  `,
-
-  js: `
-<h2>⚡ JavaScript Complete Guide</h2>
-
-<h3>Chapter 1: Introduction</h3>
-<p>
-JavaScript makes websites interactive.
-It can change HTML, CSS and respond to user actions.
-</p>
-
-<h3>Chapter 2: Variables</h3>
-<pre>
-let name = "Adam";
-const age = 20;
-</pre>
-
-<h3>Chapter 3: Data Types</h3>
-<pre>
-String
-Number
-Boolean
-Array
-Object
-</pre>
-
-<h3>Chapter 4: Functions</h3>
-<pre>
-function greet(){
-  console.log("Hello");
-}
-</pre>
-
-<h3>Chapter 5: Conditions</h3>
-<pre>
-if(age >= 18){
-  console.log("Adult");
-}
-</pre>
-
-<h3>Chapter 6: Loops</h3>
-<pre>
-for(let i = 0; i < 5; i++){
-  console.log(i);
-}
-</pre>
-
-<h3>Chapter 7: Arrays</h3>
-<pre>
-const colors = ["red","blue","green"];
-</pre>
-
-<h3>Chapter 8: Objects</h3>
-<pre>
-const user = {
-  name:"Adam",
-  age:20
-};
-</pre>
-
-<h3>Chapter 9: DOM Manipulation</h3>
-<pre>
-document.querySelector("h1").textContent =
-"Welcome";
-</pre>
-
-<h3>Chapter 10: Events</h3>
-<pre>
-button.addEventListener("click", () => {
-  alert("Button Clicked");
-});
-</pre>
-`,
-
-  
-
-  tailwind: `
-    <h2>🚀 Tailwind CSS Complete Guide</h2>
-
-    <h3>Chapter 1: Installation</h3>
-    <p>Install Tailwind with npm or CDN.</p>
-
-    <h3>Chapter 2: Colors</h3>
-    <pre>
-bg-blue-500
-text-white
-    </pre>
-
-    <h3>Chapter 3: Padding & Margin</h3>
-    <pre>
-p-4
-m-4
-    </pre>
-
-    <h3>Chapter 4: Flexbox</h3>
-    <pre>
-flex
-justify-center
-items-center
-    </pre>
-
-    <h3>Chapter 5: Grid</h3>
-    <pre>
-grid
-grid-cols-3
-    </pre>
-
-    <h3>Chapter 6: Width & Height</h3>
-    <pre>
-w-full
-h-screen
-    </pre>
-
-    <h3>Chapter 7: Responsive Design</h3>
-    <pre>
-md:flex
-lg:grid
-    </pre>
-
-    <h3>Chapter 8: Hover Effects</h3>
-    <pre>
-hover:bg-blue-700
-    </pre>
-
-    <h3>Chapter 9: Cards</h3>
-    <p>Create beautiful card layouts.</p>
-
-    <h3>Chapter 10: Projects</h3>
-    <p>Build landing pages, dashboards and portfolios.</p>
-  `
-};
-
-function showBook(book){
-  document.getElementById("content").innerHTML = books[book];
-}
-function showPage(pageId){
-
-    const pages = document.querySelectorAll(".page");
-
-    pages.forEach(page=>{
-        page.style.display = "none";
-    });
-
-    document.getElementById(pageId).style.display = "block";
-}
-
-
-function signupUser(){
-
-    const name = document.getElementById("signupName").value;
-    const email = document.getElementById("signupEmail").value;
-    const password = document.getElementById("signupPassword").value;
-
-    if(!name || !email || !password){
-        document.getElementById("signupMsg").textContent =
-        "Please fill all fields";
-        return;
-    }
-
-
-
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-
-    document.getElementById("signupMsg").textContent =
-    "Account created successfully!";
-}
-
-
-function loginUser(){
-
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-
-    const savedEmail = localStorage.getItem("email");
-    const savedPassword = localStorage.getItem("password");
-
-    if(email === savedEmail && password === savedPassword){
-
-        document.querySelectorAll(".page").forEach(page=>{
-            page.style.display = "none";
-        });
-
-        document.getElementById("librarySection").style.display = "block";
-
-    }else{
-        document.getElementById("loginMsg").textContent =
-        "Invalid Email or Password";
-    }
-}
-
-function logoutUser(){
-
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-
-    document.getElementById("librarySection").style.display = "none";
-
-    document.querySelectorAll(".page").forEach(page=>{
-        page.style.display = "none";
-    });
-
-    document.getElementById("Login").style.display = "block";
-
-    alert("Logged out successfully!");
-}
-function showPage(pageId){
-
-    const pages = document.querySelectorAll(".page");
-    const library = document.getElementById("librarySection");
-
-    pages.forEach(page=>{
-        page.style.display = "none";
-    });
-
-    library.style.display = "none";
-
-    document.getElementById(pageId).style.display = "block";
-}
-function showLibrary(){
-
-    const pages = document.querySelectorAll(".page");
-
-    pages.forEach(page=>{
-        page.style.display = "none";
-    });
-
-    document.getElementById("librarySection").style.display = "block";
-}
-
-function logoutUser(){
-
-    document.getElementById("librarySection").style.display = "none";
-
-    document.querySelectorAll(".page").forEach(page=>{
-        page.style.display = "none";
-    });
-
-    document.getElementById("Login").style.display = "block";
-
-    document.getElementById("loginEmail").value = "";
-    document.getElementById("loginPassword").value = "";
-
-    alert("Logged out successfully!");
-}
-</script>
 </html>
